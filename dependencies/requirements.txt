@@ -1,0 +1,5 @@
+pip install scapy
+pip install matplotlib
+pip install jsonpickle
+pip install requests
+pip install pytest
