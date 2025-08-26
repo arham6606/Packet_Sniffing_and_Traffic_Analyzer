@@ -1,5 +1,5 @@
-pip install scapy
-pip install matplotlib
-pip install jsonpickle
-pip install requests
-pip install pytest
+scapy
+matplotlib
+jsonpickle
+requests
+pytest
