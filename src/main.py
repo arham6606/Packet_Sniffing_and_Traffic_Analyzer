@@ -1,13 +1,21 @@
 # main.py
 # Entry point for Packet Sniffer & Traffic Analyzer Project
 
-from src.capture import capture_traffic
 import os
+from src.capture import capture_traffic
 from src.analyzer import analyze_network_traffic
+import pyfiglet
+
+
+def print_banner():
+    # Print a large ASCII art banner using pyfiglet
+    ascii_banner = pyfiglet.figlet_format("\t\tNetwork Analyzer")
+    print(ascii_banner)
+    #print("\tTraffic Analyzer\n")
+
 
 if __name__ == "__main__":
-
-    print("\n\t=== Packet Sniffer & Traffic Analyzer ===\n")
+    print_banner()
 
     try:
         # === User Inputs ===

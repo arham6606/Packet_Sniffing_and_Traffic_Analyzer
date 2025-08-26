@@ -3,3 +3,4 @@ matplotlib
 jsonpickle
 requests
 pytest
+pyfiglet
