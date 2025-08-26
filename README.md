@@ -1,63 +1,141 @@
-Packet Sniffer & Traffic Analyzer
-Overview
+🚀 Packet Sniffer & Traffic Analyzer
 
-Packet Sniffer & Traffic Analyzer is an advanced Python-based tool designed for network monitoring, traffic analysis, and real-time threat detection. It captures network packets, analyzes traffic patterns, identifies potential security threats, and provides real-time alerts via Discord. This project is ideal for cybersecurity enthusiasts, network administrators, and students learning defensive security.
+An advanced Python-based tool for network monitoring, traffic analysis, and real-time threat detection.
 
-Features
-Packet Capture
+Capture, analyze, and visualize network packets while detecting attacks like SSH brute force, DOS/DDoS, and SQL injection, with real-time Discord alerts.
 
-Capture incoming and outgoing network traffic.
+🛠 Features
+📦 Packet Capture
 
-Save captured packets in .pcap format for detailed analysis.
+Capture incoming/outgoing network traffic.
 
-Configurable number of packets to capture and timeout duration.
+Save packets in .pcap format.
 
-Traffic Analysis
+Configurable number of packets and timeout.
 
-Analyze captured traffic to generate protocol and service distributions.
+📊 Traffic Analysis
 
-Detect large packets, potential port scans, flooding activity, and unusual network patterns.
+Generate protocol & service distributions.
 
-Top source/destination IPs and ports identification.
+Detect large packets, port scans, floods, and unusual patterns.
 
-Optional visual charts for protocol distribution.
+Identify top source/destination IPs & ports.
 
-Threat Detection
+Optional charts for protocol distribution.
+
+⚠️ Threat Detection
 
 SSH Brute Force Detection: Monitors repeated failed login attempts on port 22.
 
-DOS and DDoS Detection: Detects high-volume traffic to web servers (ports 80, 443) from single or multiple IPs.
+DOS/DDoS Detection: Detects high-volume HTTP(S) traffic.
 
-SQL Injection Detection: Scans HTTP and database traffic for SQL injection patterns.
+SQL Injection Detection: Scans HTTP & DB traffic for attack patterns.
 
-Real-time alerts via Discord for detected attacks.
+Real-time alerts via Discord.
 
-Logs detailed attack information in JSON files for forensic analysis.
+Detailed attack logs in JSON files.
 
-IP Intelligence
+🌐 IP Intelligence
 
-Provides geolocation, ISP, and other information for source and destination IPs.
+Provides geolocation, ISP, and other info for source & destination IPs.
 
-Caches IP information locally for efficiency.
+Caches IP info locally for faster queries.
 
-Handles public and private IPs separately.
+Differentiates public vs private IPs.
 
-Logging & Reporting
+📝 Logging & Reporting
 
-JSON summary of all captured packets, analysis results, and detected threats.
+JSON summary of captured packets and detected attacks.
 
-Separate JSON log for detailed attack reports.
+Detailed JSON logs for forensic analysis.
 
-Discord webhook notifications for real-time alerts.
+Optional charts saved as images for visual inspection.
 
-Installation
+⚡ Installation
 
-Clone the repository
+git clone [https://github.com/arham6606/Packet_Sniffing_and_Traffic_Analyzer.git]
+pip install -r requirements.txt
 
-git clone 
+Dependencies:
 
+scapy
 
+requests
 
+matplotlib
 
+▶️ Usage
 
+Run the main program: sudo python3 src.main
 
+Input the prompts:
+
+Number of packets to capture.
+
+Output filename for .pcap.
+
+Analysis filename for JSON summary.
+
+Program automatically creates directories:
+
+log/ → stores .pcap and Discord logs.
+
+data/ → stores JSON summaries, attack logs, and IP cache.
+
+View output:
+
+.pcap file with captured packets.
+
+JSON summary and detailed attack logs.
+
+Optional protocol distribution chart.
+
+Real-time Discord alerts for attacks.
+
+<details> <summary>Example Output</summary>
+📊 Top 5 Source IPs:
+   192.168.1.100: 50 packets
+📊 Top 5 Destination Ports:
+   Port 80: 200 packets
+⚠️ Possible port scan detected from 192.168.1.101
+⚠️ SSH Brute Force suspected from 203.0.113.45 (15 attempts in last 60s)
+🚨 SQL Injection attempt detected from 198.51.100.22
+ </details>
+
+📂 Project Structure
+
+packet-sniffer-analyzer/
+│
+├── main.py                  # Entry point
+├── src/
+│   ├── capture.py           # Packet capture logic
+│   ├── analyzer.py          # Network analysis logic
+│   ├── analyzer_helper.py   # Helper functions and logging
+│   ├── discord_alert.py     # Discord webhook notifications
+│   ├── ip_location.py       # IP geolocation and caching
+│   ├── sql_injection.py     # SQL injection detection
+│   └── application_layer_attack.py  # DOS, DDOS, SSH brute force detection
+├── log/                     # PCAP files and Discord alert logs
+└── data/                    # JSON summaries, attack logs, and IP cache
+
+🔧 Customization
+
+Discord Webhook: Update DISCORD_WEBHOOK in discord_alert.py.
+
+Port/Protocol Settings: Modify SERVICE_PROTOCOLS and PROTOCOLS_MAPPING.
+
+Attack Thresholds: Adjust in application_layer_attack.py.
+
+🤝 Contributing
+
+Add new attack detection modules.
+
+Improve visualizations or charts.
+
+Optimize packet capture performance.
+
+Submit bug fixes or pull requests.
+
+🔗 Connect with Me
+
+You can connect with me on LinkedIn:[www.linkedin.com/in/-arham]
