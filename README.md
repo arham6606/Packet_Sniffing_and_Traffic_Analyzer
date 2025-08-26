@@ -66,7 +66,7 @@ matplotlib
 
 # ▶️ Usage
 
-Run the main program: sudo python3 src.main
+Run the main program: sudo python3 -m src.main
 
 Input the prompts:
 
