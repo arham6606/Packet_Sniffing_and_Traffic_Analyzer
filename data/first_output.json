@@ -1,0 +1,113 @@
+{
+    "Total Packets": 100,
+    "Protocol Distribution": {
+        "TCP": 60,
+        "UDP": 33
+    },
+    "Service Distribution": {
+        "unknown": 47,
+        "HTTPS": 42,
+        "mdns": 2,
+        "DNS": 1,
+        "HTTP": 1
+    },
+    "top_source_ips": [
+        [
+            "192.168.0.105",
+            47
+        ],
+        [
+            "104.18.41.41",
+            15
+        ],
+        [
+            "34.36.73.246",
+            11
+        ],
+        [
+            "146.75.45.91",
+            4
+        ],
+        [
+            "172.64.148.235",
+            4
+        ]
+    ],
+    "top_destination_ips": [
+        [
+            "192.168.0.105",
+            44
+        ],
+        [
+            "104.18.41.41",
+            14
+        ],
+        [
+            "34.36.73.246",
+            12
+        ],
+        [
+            "208.95.112.1",
+            5
+        ],
+        [
+            "146.75.45.91",
+            4
+        ]
+    ],
+    "top_source_ports": [
+        [
+            443,
+            42
+        ],
+        [
+            47727,
+            14
+        ],
+        [
+            57808,
+            12
+        ],
+        [
+            56164,
+            4
+        ],
+        [
+            57648,
+            4
+        ]
+    ],
+    "top_destination_ports": [
+        [
+            443,
+            41
+        ],
+        [
+            47727,
+            15
+        ],
+        [
+            57808,
+            11
+        ],
+        [
+            80,
+            5
+        ],
+        [
+            56164,
+            4
+        ]
+    ],
+    "capture_start": "2025-08-27T15:26:51.623226",
+    "capture_end": "2025-08-27T15:27:20.308685",
+    "duration_seconds": 28.7,
+    "average_packet_size_bytes": 250.0,
+    "Large Packet Detection": 10,
+    "Flooding Detection from": "None",
+    "Port scanning detection of": {},
+    "DOS Attack Report": "None",
+    "DDOS Attack Report": "None",
+    "SSH Brute Force Attack Report": "None",
+    "SQL Injection Attack Report": "None"
+}

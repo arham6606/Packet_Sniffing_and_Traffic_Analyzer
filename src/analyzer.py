@@ -52,6 +52,8 @@ def analyze_network_traffic(output_file, analysis_file, chart):
     service_protocols = Counter()
     packets_sizes = []
     ip_packet_times = defaultdict(list)
+    source_ip_info = []
+    destination_ip_info = []
 
     # Track capture duration
     start_time, end_time = None, None
@@ -109,8 +111,9 @@ def analyze_network_traffic(output_file, analysis_file, chart):
                 #storing the SSH brute forcing attack if it is happeing
                 ssh_attack_happening = Detect_SSH_Brute_Force(layer.dport,packet[IP].src,time_in_seconds)
                 #storing detailed info about ip in file
-                get_ip_info(packet[IP].src,"Source")
-                get_ip_info(packet[IP].dst,"Destination")
+                
+                source_ip_info.append(packet[IP].src)
+                destination_ip_info.append(packet[IP].dst)
 
                 #sql injection detection
                 if TCP in packet:
@@ -234,5 +237,8 @@ def analyze_network_traffic(output_file, analysis_file, chart):
         plt.savefig(chart_file)
         plt.close()
         logging.info("Protocol distribution chart saved")
+    
+    get_ip_info(source_ip_info,"Source")
+    get_ip_info(destination_ip_info,"Destination")
     
     return results

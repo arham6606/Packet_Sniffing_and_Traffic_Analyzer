@@ -56,65 +56,65 @@ def save_cache(cache, filename=CACHE_FILE):
         print(f"[Error] Failed to save cache: {e}")
 
 
-def get_ip_info(ip, which_ip):
+def get_ip_info(ips, which_ip):
     
     """
     Get IP information from ip-api.com.
-    - First checks the local cache.
-    - If not cached, makes a request.
+    - Accepts a single IP (string) or list of IPs.
+    - Uses cache to avoid duplicate lookups.
     - Handles private IPs separately.
-    - Returns a dictionary with IP details.
+    - Returns a dict (for single IP) or list of dicts (for multiple IPs).
     """
 
     cache = load_cache()
 
-    # Return from cache if available
-    if ip in cache:
-        return cache[ip]
+    # Normalize to list
+    if isinstance(ips, str):
+        ips = [ips]
 
-    try:
-       # print(f"[DEBUG] Checking IP: {ip}")  # Debug logging
+    results = []
+    for ip in ips:
+        if ip in cache:
+            results.append(cache[ip])
+            continue
 
-        response = requests.get(f"http://ip-api.com/json/{ip}", timeout=3)
-       # print(f"[DEBUG] Response Code: {response.status_code}")  # Debug logging
+        try:
+            response = requests.get(f"http://ip-api.com/json/{ip}", timeout=3)
 
-        # If API request was successful
-        if response.status_code == 200:
-            data = response.json()
+            if response.status_code == 200:
+                data = response.json()
 
-            # Only process if IP is public
-            if is_public_ip(ip):
-                ip_info = {
-                    "type": which_ip,
-                    "ip": ip,  # ip-api uses 'query', not 'ip'
-                    "city": data.get("city", "Unknown"),
-                    "region": data.get("regionName", "Unknown"),
-                    "country": data.get("country", "Unknown"),
-                    "loc": f"{data.get('lat', 'Unknown')},{data.get('lon', 'Unknown')}",
-                    "org": data.get("isp", "Unknown"),
-                    "timezone": data.get("timezone", "Unknown"),
-                    "first_seen": datetime.utcnow().isoformat() + "Z"
-                }
-                cache[ip] = ip_info
-                save_cache(cache)
-                return ip_info
+                if is_public_ip(ip):
+                    ip_info = {
+                        "type": which_ip,
+                        "ip": ip,
+                        "city": data.get("city", "Unknown"),
+                        "region": data.get("regionName", "Unknown"),
+                        "country": data.get("country", "Unknown"),
+                        "loc": f"{data.get('lat', 'Unknown')},{data.get('lon', 'Unknown')}",
+                        "org": data.get("isp", "Unknown"),
+                        "timezone": data.get("timezone", "Unknown"),
+                        "first_seen": datetime.utcnow().isoformat() + "Z"
+                    }
+                    cache[ip] = ip_info
+                    save_cache(cache)
+                    results.append(ip_info)
+                else:
+                    results.append({
+                        "type": which_ip,
+                        "ip": ip,
+                        "info": "Private IP - no lookup",
+                        "first_seen": datetime.utcnow().isoformat() + "Z"
+                    })
             else:
-                # Private IPs are not looked up via external API
-                return {
-                    "type": which_ip,
-                    "ip": ip,
-                    "info": "Private IP - no lookup",
-                    "first_seen": datetime.utcnow().isoformat() + "Z"
-                }
+                results.append({"ip": ip, "error": f"API returned status {response.status_code}"})
 
-        else:
-            return {"error": f"API returned status {response.status_code}"}
+        except requests.exceptions.Timeout:
+            results.append({"ip": ip, "error": "Request timed out while fetching IP info"})
+        except requests.exceptions.RequestException as e:
+            results.append({"ip": ip, "error": f"Network request failed: {str(e)}"})
+        except Exception as e:
+            results.append({"ip": ip, "error": f"Unexpected error: {str(e)}"})
 
-    except requests.exceptions.Timeout:
-        return {"error": "Request timed out while fetching IP info"}
-    except requests.exceptions.RequestException as e:
-        return {"error": f"Network request failed: {str(e)}"}
-    except Exception as e:
-        return {"error": f"Unexpected error: {str(e)}"}
-
-    return {"error": "Unknown response"}
+    # Return a single dict if input was one IP, else list
+    return results[0] if len(results) == 1 else results

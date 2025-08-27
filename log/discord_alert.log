@@ -1,0 +1,46 @@
+2025-08-27 15:28:09,565 - DEBUG - Added field to embed: {'name': "Packets (last 10's)", 'value': '100', 'inline': True}
+2025-08-27 15:28:09,565 - DEBUG - Added field to embed: {'name': 'Target Port', 'value': '80', 'inline': True}
+2025-08-27 15:28:09,565 - DEBUG - Sending Discord alert: {'embeds': [{'title': '🚨 DOS Attack Detected', 'description': 'HTTP Flood suspected from 192.168.1.10', 'color': 15158332, 'fields': [{'name': "Packets (last 10's)", 'value': '100', 'inline': True}, {'name': 'Target Port', 'value': '80', 'inline': True}]}]}
+2025-08-27 15:28:09,566 - DEBUG - Starting new HTTPS connection (1): discord.com:443
+2025-08-27 15:28:10,679 - DEBUG - https://discord.com:443 "POST /api/webhooks/1409637392708796530/PBfoov4VRJxqTawVc6T4L-L1i7dNfL4Yw8kYvqxKgSqKaXtueTp1m5QVwis4qxoVAX2- HTTP/1.1" 204 0
+2025-08-27 15:28:10,681 - INFO - Alert sent successfully: DOS Attack Detected
+2025-08-27 15:28:10,681 - DEBUG - Added field to embed: {'name': "Packets (last 10's)", 'value': '101', 'inline': True}
+2025-08-27 15:28:10,681 - DEBUG - Added field to embed: {'name': 'Target Port', 'value': '80', 'inline': True}
+2025-08-27 15:28:10,681 - DEBUG - Sending Discord alert: {'embeds': [{'title': '🚨 DOS Attack Detected', 'description': 'HTTP Flood suspected from 192.168.1.10', 'color': 15158332, 'fields': [{'name': "Packets (last 10's)", 'value': '101', 'inline': True}, {'name': 'Target Port', 'value': '80', 'inline': True}]}]}
+2025-08-27 15:28:10,682 - DEBUG - Starting new HTTPS connection (1): discord.com:443
+2025-08-27 15:28:11,524 - DEBUG - https://discord.com:443 "POST /api/webhooks/1409637392708796530/PBfoov4VRJxqTawVc6T4L-L1i7dNfL4Yw8kYvqxKgSqKaXtueTp1m5QVwis4qxoVAX2- HTTP/1.1" 204 0
+2025-08-27 15:28:11,525 - INFO - Alert sent successfully: DOS Attack Detected
+2025-08-27 15:28:11,529 - DEBUG - Added field to embed: {'name': "Packet (Last 10's)", 'value': '200', 'inline': True}
+2025-08-27 15:28:11,529 - DEBUG - Added field to embed: {'name': 'Target Port', 'value': '80', 'inline': True}
+2025-08-27 15:28:11,529 - DEBUG - Sending Discord alert: {'embeds': [{'title': '🚨 DDOS Attack Detected', 'description': "Multiple IP's Attacking", 'color': 15158332, 'fields': [{'name': "Packet (Last 10's)", 'value': '200', 'inline': True}, {'name': 'Target Port', 'value': '80', 'inline': True}]}]}
+2025-08-27 15:28:11,530 - DEBUG - Starting new HTTPS connection (1): discord.com:443
+2025-08-27 15:28:13,560 - DEBUG - https://discord.com:443 "POST /api/webhooks/1409637392708796530/PBfoov4VRJxqTawVc6T4L-L1i7dNfL4Yw8kYvqxKgSqKaXtueTp1m5QVwis4qxoVAX2- HTTP/1.1" 204 0
+2025-08-27 15:28:13,561 - INFO - Alert sent successfully: DDOS Attack Detected
+2025-08-27 15:28:13,562 - DEBUG - Added field to embed: {'name': "Packet (Last 10's)", 'value': '201', 'inline': True}
+2025-08-27 15:28:13,562 - DEBUG - Added field to embed: {'name': 'Target Port', 'value': '80', 'inline': True}
+2025-08-27 15:28:13,562 - DEBUG - Sending Discord alert: {'embeds': [{'title': '🚨 DDOS Attack Detected', 'description': "Multiple IP's Attacking", 'color': 15158332, 'fields': [{'name': "Packet (Last 10's)", 'value': '201', 'inline': True}, {'name': 'Target Port', 'value': '80', 'inline': True}]}]}
+2025-08-27 15:28:13,563 - DEBUG - Starting new HTTPS connection (1): discord.com:443
+2025-08-27 15:28:14,584 - DEBUG - https://discord.com:443 "POST /api/webhooks/1409637392708796530/PBfoov4VRJxqTawVc6T4L-L1i7dNfL4Yw8kYvqxKgSqKaXtueTp1m5QVwis4qxoVAX2- HTTP/1.1" 204 0
+2025-08-27 15:28:14,585 - INFO - Alert sent successfully: DDOS Attack Detected
+2025-08-27 15:28:14,587 - DEBUG - Added field to embed: {'name': "Attempts (Last 60's)", 'value': '10', 'inline': True}
+2025-08-27 15:28:14,587 - DEBUG - Sending Discord alert: {'embeds': [{'title': '🚨 SSH Brute Force Attempt', 'description': 'Mulitple Failed Login from 192.168.1.5', 'color': 15158332, 'fields': [{'name': "Attempts (Last 60's)", 'value': '10', 'inline': True}]}]}
+2025-08-27 15:28:14,588 - DEBUG - Starting new HTTPS connection (1): discord.com:443
+2025-08-27 15:28:15,609 - DEBUG - https://discord.com:443 "POST /api/webhooks/1409637392708796530/PBfoov4VRJxqTawVc6T4L-L1i7dNfL4Yw8kYvqxKgSqKaXtueTp1m5QVwis4qxoVAX2- HTTP/1.1" 204 0
+2025-08-27 15:28:15,609 - INFO - Alert sent successfully: SSH Brute Force Attempt
+2025-08-27 15:28:15,610 - DEBUG - Added field to embed: {'name': "Attempts (Last 60's)", 'value': '11', 'inline': True}
+2025-08-27 15:28:15,610 - DEBUG - Sending Discord alert: {'embeds': [{'title': '🚨 SSH Brute Force Attempt', 'description': 'Mulitple Failed Login from 192.168.1.5', 'color': 15158332, 'fields': [{'name': "Attempts (Last 60's)", 'value': '11', 'inline': True}]}]}
+2025-08-27 15:28:15,611 - DEBUG - Starting new HTTPS connection (1): discord.com:443
+2025-08-27 15:28:16,632 - DEBUG - https://discord.com:443 "POST /api/webhooks/1409637392708796530/PBfoov4VRJxqTawVc6T4L-L1i7dNfL4Yw8kYvqxKgSqKaXtueTp1m5QVwis4qxoVAX2- HTTP/1.1" 204 0
+2025-08-27 15:28:16,633 - INFO - Alert sent successfully: SSH Brute Force Attempt
+2025-08-27 15:28:16,633 - DEBUG - Sending Discord alert: {'embeds': [{'title': '🚨 SQL Injection Attempted', 'description': 'Detected from:192.168.1.10', 'color': 15158332, 'fields': []}]}
+2025-08-27 15:28:16,634 - DEBUG - Starting new HTTPS connection (1): discord.com:443
+2025-08-27 15:28:17,456 - DEBUG - https://discord.com:443 "POST /api/webhooks/1409637392708796530/PBfoov4VRJxqTawVc6T4L-L1i7dNfL4Yw8kYvqxKgSqKaXtueTp1m5QVwis4qxoVAX2- HTTP/1.1" 204 0
+2025-08-27 15:28:17,457 - INFO - Alert sent successfully: SQL Injection Attempted
+2025-08-27 15:28:17,458 - DEBUG - Sending Discord alert: {'embeds': [{'title': '🚨 SQL Injection Attempted', 'description': 'Detected from:192.168.1.15', 'color': 15158332, 'fields': []}]}
+2025-08-27 15:28:17,459 - DEBUG - Starting new HTTPS connection (1): discord.com:443
+2025-08-27 15:28:18,272 - DEBUG - https://discord.com:443 "POST /api/webhooks/1409637392708796530/PBfoov4VRJxqTawVc6T4L-L1i7dNfL4Yw8kYvqxKgSqKaXtueTp1m5QVwis4qxoVAX2- HTTP/1.1" 204 0
+2025-08-27 15:28:18,272 - INFO - Alert sent successfully: SQL Injection Attempted
+2025-08-27 15:28:18,273 - DEBUG - Sending Discord alert: {'embeds': [{'title': '🚨 SQL Injection Attempted', 'description': 'Detected from:192.168.1.20', 'color': 15158332, 'fields': []}]}
+2025-08-27 15:28:18,274 - DEBUG - Starting new HTTPS connection (1): discord.com:443
+2025-08-27 15:28:19,096 - DEBUG - https://discord.com:443 "POST /api/webhooks/1409637392708796530/PBfoov4VRJxqTawVc6T4L-L1i7dNfL4Yw8kYvqxKgSqKaXtueTp1m5QVwis4qxoVAX2- HTTP/1.1" 204 0
+2025-08-27 15:28:19,097 - INFO - Alert sent successfully: SQL Injection Attempted
